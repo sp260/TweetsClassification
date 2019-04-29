@@ -2,3 +2,6 @@ numpy
 scipy
 pandas
 spacy
+tornado
+nose
+imblearn
