@@ -21,7 +21,7 @@ import spacy
 import glob
 import re
 
-all_files = glob.glob("/corpus/groupe*.txt")
+all_files = glob.glob("./corpus/groupe*.txt")
 df = pd.DataFrame()
 for file_ in all_files: 
     list_of_lists = []
