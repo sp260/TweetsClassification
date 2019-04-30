@@ -78,7 +78,8 @@ contraction_mapping = {
     "nn": "non",
     "b8en": "bien",
     "good": "bien",
-    "bad": "mauvais"
+    "bad": "mauvais",
+    "lui": "il"
 }
 
 
