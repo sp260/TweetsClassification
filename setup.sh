@@ -1,9 +1,12 @@
 #! /bin/bash
 
+# update system
+sudo apt -y update && sudo apt -y upgrade
+
 # install python and pip
-sudo apt -y install python
-sudo apt -y install python-pip
+sudo apt -y install python3
+sudo apt -y install python3-pip
 
 # install libraries needed for the classifier
-sudo pip install -r requirements.txt
-sudo python -m spacy download fr
+sudo pip3 install -r requirements.txt
+sudo python3 -m spacy download fr
