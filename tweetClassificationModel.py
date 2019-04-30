@@ -63,6 +63,7 @@ contraction_mapping = {
     "b8en": "bien",
     "good": "bien",
     "bad": "mauvais",
+    "lui": "il"
 }
 
 nlp = spacy.load('fr')
