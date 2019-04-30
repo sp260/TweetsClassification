@@ -16,4 +16,4 @@ for item in r.get_iterator():
 
 file = open('TweetsAboutMacron.txt','w')
 file.write(corpus) 
-file.close()”
+file.close()

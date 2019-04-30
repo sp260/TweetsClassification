@@ -223,12 +223,12 @@ save_classifier.close()
 # In[67]:
 
 
-# Retrieve the saved file and uplaod it to an object
+# Retrieve the saved file and upload it to an object
 vec = open("rf_classifier.pickle", 'rb')
 rf_clf = pickle.load(vec)
 vec.close()
 
-# Retrieve the saved file and uplaod it to an object
+# Retrieve the saved file and upload it to an object
 vec = open("lr_classifier.pickle", 'rb')
 lr_clf = pickle.load(vec)
 vec.close()
@@ -301,7 +301,7 @@ preds
 
 
 def get_predictions(file):    
-    #Convert the file corpus to a dataframe
+    # Convert the file corpus to a dataframe
     list_of_lists = []
     with open(file, 'rU') as f:
         for line in f:
@@ -317,7 +317,7 @@ def get_predictions(file):
     print(df.info())
     print(df.head())
     
-    #Clean and transform the data
+    # Clean and transform the data
     df['Clean_tweet'] = [tweet_cleaner(t) for t in df.Tweet]
     
     X = df.Clean_tweet.values
@@ -326,19 +326,21 @@ def get_predictions(file):
     vectorizer = TfidfVectorizer()
     X = vectorizer.fit_transform(X)
     
-    #Use the saved classifier and evaluate the predictions
+    # Use the saved classifier and evaluate the predictions
     vec = open("rf_classifier.pickle", 'rb')
     clf = pickle.load(vec)
     vec.close()
-    preds = clf.predict(test_X)
 
-    #If the file is already annoted, we can evaluate the prediction by decommenting the two following lines
-    #print(classification_report(y, preds))
-    #print("Accuracy", accuracy_score(y, preds))
+    # predict on the new data
+    preds = clf.predict(X)
+
+    # If the file is already annoted, we can evaluate the prediction
+    if df.Sentiment.values[0]!='???':
+        print(classification_report(y, preds))
+        print("Accuracy", accuracy_score(y, preds))
 
 
 # In[78]:
 
 FILE = 'TweetsAboutMacron.txt'
 get_predictions(FILE)
-
