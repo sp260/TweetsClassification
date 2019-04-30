@@ -4,6 +4,7 @@ A predictive model to classify tweets.
 
 ## Prerequisite
 You need at least 3gb of RAM to install spaCy package.
+(tested on Ubuntu system)
 
 ## Installation
 
