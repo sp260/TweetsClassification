@@ -11,7 +11,7 @@ If you want to add more training data in the corpus folder, please refer to the 
 
 ## Installation
 
-Use the setup file.
+Use the setup file and decompress the rf_classifier.zip
 
 ```bash
 ./setup.sh
