@@ -1,3 +1,4 @@
+scikit-learn==0.20.2
 numpy
 scipy
 pandas
