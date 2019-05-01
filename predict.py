@@ -158,12 +158,13 @@ def get_predictions(file):
     df['Predicted_sentiment'] = preds
     print(preds)
     
-    text_file = open("Annoted_Tweets.txt", "w")
+    annoted_file_name = "Annoted_" + file
+    text_file = open(annoted_file_name, "w")
     for index, row in df.iterrows():
         line = '(' + row['Id'] + ', ' + row['Predicted_sentiment'] + ') ' + row['Tweet']
         text_file.write(line)
     text_file.close()
-    print("Annoted file created with success: Annoted_Tweets.txt")
+    print("Annoted file created with success: ", annoted_file_name)
 
 
 # In[47]:
