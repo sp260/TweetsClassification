@@ -15,6 +15,7 @@ Use the setup file and decompress the rf_classifier.zip
 
 ```bash
 ./setup.sh
+unzip rf_classifier.zip
 ```
 
 ## Usage
