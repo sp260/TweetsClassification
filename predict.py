@@ -59,8 +59,20 @@ contraction_mapping = {
     " 1 ": " un ",
     "PR": "président",
     "RT": "retweet",
-    "LREM": "la republique en marche",
-    "nn": "non"
+    "LREM": "la république en marche",
+    "LAREM": "la république en marche",
+    "#LREM": "la république en marche",
+    "#LAREM": "la république en marche",
+    "telma": "tellement",
+    "ctr": "contre",
+    "5e": "cinquieme",
+    "foute": "foutre",
+    "my god": "mon dieu",
+    "nn": "non",
+    "b8en": "bien",
+    "good": "bien",
+    "bad": "mauvais",
+    "lui": "il"
 }
 
 
