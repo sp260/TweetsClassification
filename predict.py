@@ -19,10 +19,9 @@ import pickle
 import codecs
 import spacy
 import glob
-import sys
 import re
 
-all_files = glob.glob("/corpus/groupe*.txt")
+all_files = glob.glob("./corpus/groupe*.txt")
 df = pd.DataFrame()
 for file_ in all_files: 
     list_of_lists = []
@@ -115,7 +114,7 @@ vectorizer = TfidfVectorizer()
 X = vectorizer.fit_transform(X)
 
 
-# In[42]:
+# In[46]:
 
 
 def get_predictions(file):    
@@ -156,14 +155,19 @@ def get_predictions(file):
             container_df[column] = df_topredict[column]
 
     preds = clf.predict(container_df)
+    df['Predicted_sentiment'] = preds
     print(preds)
+    
+    text_file = open("Annoted_Tweets.txt", "w")
+    for index, row in df.iterrows():
+        line = '(' + row['Id'] + ', ' + row['Predicted_sentiment'] + ') ' + row['Tweet']
+        text_file.write(line)
+    text_file.close()
+    print("Annoted file created with success: Annoted_Tweets.txt")
 
 
-# In[43]:
+# In[47]:
 
 
-for file in sys.argv[1:]:
-    print('***** Analyse du sentiment pour le fichier', file[:-4], '*****')
-    get_predictions(file)
-    print('----------  ----------  ----------')
+get_predictions('TweetsAboutMacron.txt')
 

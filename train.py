@@ -21,7 +21,7 @@ import spacy
 import glob
 import re
 
-all_files = glob.glob("/corpus/groupe*.txt")
+all_files = glob.glob("./corpus/groupe*.txt")
 df = pd.DataFrame()
 for file_ in all_files: 
     list_of_lists = []
@@ -167,10 +167,9 @@ cv = StratifiedKFold()
 
 
 rf_grid = {  
-     #'max_depth': list(range(10,100,10)),
-     #'max_features': ['auto', 'sqrt'],
-     #'min_samples_leaf': [1, 2, 4],
-     #'min_samples_split': [2, 5, 10],
+     'max_depth': list(range(10,100,10)),
+     'min_samples_leaf': [1, 2, 4],
+     'min_samples_split': [2, 5, 10],
      'n_estimators': list(range(100,500,100))
 }
                   
