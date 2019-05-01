@@ -7,7 +7,7 @@ You need at least 3gb of RAM to install spaCy package.
 (tested on Ubuntu system)
 
 
-If you want to add more training datain the corpus folder, please refer to the annotation guide and be sure that the file name started with "groupe".
+If you want to add more training data in the corpus folder, please refer to the annotation guide and be sure that the file name starts with "groupe".
 
 ## Installation
 
